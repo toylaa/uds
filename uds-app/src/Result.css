@@ -1,0 +1,14 @@
+img {
+  width: 50px;
+}
+
+.result {
+  padding: 5px;
+  border: solid;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.result:hover {
+  background: #F0F8FF;
+}
