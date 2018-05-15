@@ -1,28 +1,73 @@
 <!DOCTYPE html>
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		crossorigin="anonymous"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+
+<link rel="stylesheet" href="styles/homeStyle.css">
+<link rel="stylesheet" href="styles/animate.css">
+
 
 <head>
 	<title>Unified Disposal Services - Home for all things trash related</title>
 </head>
 <body>
-<div style="text-align:center">
-	<h2>Welcome to Unified Disposal Services. </h2>	
-		<span><img  src="img/114x114.png"></span>	
-</div>
 
- <?php require_once 'php/nav.php'; ?>
+<div class="page-container">
 
-<section style="height:500px;background: #f1c40f; color: rgba(0, 0, 0, 0.5);">
-	<div style="text-align:center">
-		<h2>There is no cake.</h2>	
-		<h3>Please excuse our appearance as we are under construction.</h3>
+	 <?php require_once 'php/nav.php'; ?>
+
+	<div class="content">
+		
+		
+
+		<section style=";background:#f1c40f;">
+					<div style="text-align:center;padding:10%;">
+						<h2 id="noCake">Give this dirty bitch a good Scrolling..</h2>
+						<br>	
+						<p>
+							This page now has a STICKY SEARCH BAR, as SEPARATE from the NAVIGATION BAR
+						</p>
+						<br/>
+						<h3>Here is a 'section'. Monochromatic color:#f1c40f</h3>
+						<br>
+						<h3>Please excuse our appearance (and our language) as we are under construction.</h3>
+						<br>
+
+						  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+						  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+						<br/>
+					</div>
+				</section>  
+
+				<section style="background:#aa8a0a;">
+					<div style="text-align:center;padding:10%;">
+						<br/>
+						<h2 id="noCake">There is no cake.</h2>	
+						<br/>
+						<h3>Here is another section. Monochromatic color:#aa8a0a</h3>
+						<h3>For the record i hate this color</h3>
+						<br>
+						<p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+						  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+						  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+						<br/>
+					</div>
+				</section>  
+
+
 	</div>
-</section>  
 
+	<?php require_once 'php/footer.php'; ?>
 
-<?php require_once 'php/footer.php'; ?>
+</div>
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

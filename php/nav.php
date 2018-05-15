@@ -1,60 +1,93 @@
 
-<link href='https://fonts.googleapis.com/css?family=Roboto:500,900,100,300,700,400' rel='stylesheet' type='text/css'>
-
-<nav class="shift" >
-    <!--Nav class options=(circle/stroke/fill/shift)-->
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Login</a></li>
-      <div style="clear"></div>
-    </ul>
-  </nav>
 
 
+  <nav class=" top-container shift" >
+
+     <div class="center">
+      <h2>Welcome to Unified Disposal Services. </h2>
+
+      <span><img  src="img/114x114.png" class="animated bounceIn"></span> 
+    </div>
+      <!--Nav class options=(circle/stroke/fill/shift)-->
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Login</a></li>
+        <div style="clear"></div>
+      </ul>
+    </nav>
 
 
-<!-- NavBar Style via https://codepen.io/maheshambure21/pen/QwXaRw -->
-<!-- CSS  style for nav 'shift' -->
-<style>   
-    body {
-    font-family: 'Roboto', sans-serif;
-    padding: 0;
-    margin: 0;
+
+<div class="offset-spaceholder" style="min-height:90px;">
+  <div class="center header animated" id="searchHeader">
+   
+ 
+   <input type="text" name="searchText" placeholder="I'm a Sticky Search Bar!">
+   <button onclick="alert('Fuck you Joji')">click me</button>
+
+   <span id="header-contents" style="color:#fff;display:none;">This shit was hidden until you scrolled ;p </span>
+      
+    
+ 
+  </div>
+</div>
+
+<script>
+window.onscroll = function() {stickyScroller()};
+
+var header = document.getElementById("searchHeader");
+var sticky = header.offsetTop;
+
+function stickyScroller() {
+  if (window.pageYOffset >= sticky)
+  {
+    header.classList.add("sticky", "flipInX");    
+    document.getElementById("header-contents").style.display = "";
+
+  } else {
+    header.classList.remove("sticky" , "flipInX");
+   document.getElementById("header-contents").style.display = "none";
+  }
+}
+</script>
+
+<style type="text/css">
+  
+  .fixed {
+    animation-duration: 0.8s;
+    animation-name: fadeIn;
   }
 
-  small {
-    font-size: 12px;
-    color: rgba(0, 0, 0, 0.4);
+  .header {
+  padding: 10px ;
+  background: #555;
+ /* color: #f1f1f1;*/
+  /*background-color: #222;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  */
+  font: bold 16px sans-serif;
+  padding: 35px 30px;
+  border-color: black;
+  border-radius: 4px;
+  border-top-width:1px;
+}
+  
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
   }
 
-  h1 {
-    text-align: center;
-    padding: 50px 0;
-    font-weight: 800;
-    margin: 0;
-    letter-spacing: -1px;
-    color: inherit;
-    font-size: 40px;
+  .content {
+    margin:0;
   }
 
-  h2 {
-    text-align: center;
-    font-size: 30px;
-    margin: 0;
-    font-weight: 300;
-    color: inherit;
-    padding: 50px;
-  }
-
-    h3 {
-    text-align: center;
-    font-size: 20px;
-    margin: 0;
-    font-weight: 300;
-    color: inherit;
-    padding: 30px;
+  .sticky + .content {
+  padding-top: 0px;
   }
 
   .center {
@@ -68,7 +101,6 @@
     background: #fff;
     padding: 20px 0;
     box-shadow: 0px 5px 0px #dedede;
-    border:5px;
   }
   nav ul {
     list-style: none;
@@ -95,8 +127,8 @@
     color: #555;
   }
 
-
-
+/* NavBar Style via https://codepen.io/maheshambure21/pen/QwXaRw */
+/* CSS  style for nav 'shift' -->*/
   /* SHIFT */
   nav.shift ul li a {
     position:relative;
@@ -130,48 +162,7 @@
 
 
 
-  /* Keyframes */
-  @-webkit-keyframes fill {
-    0% {
-      width: 0%;
-      height: 1px;
-    }
-    50% {
-      width: 100%;
-      height: 1px;
-    }
-    100% {
-      width: 100%;
-      height: 100%;
-      background: #333;
-    }
-  }
 
-  /* Keyframes */
-  @-webkit-keyframes circle {
-    0% {
-      width: 1px;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      margin: auto;
-      height: 1px;
-      z-index: -1;
-      background: #eee;
-      border-radius: 100%;
-    }
-    100% {
-      background: #aaa;
-      height: 5000%;
-      width: 5000%;
-      z-index: -1;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      margin: auto;
-      border-radius: 0;
-    }
-  }
 </style>
+
+

@@ -1,5 +1,6 @@
 .footer-distributed{
-	background-color: #222;
+/*	background-color: #222;*/
+	background-color: #fff;
 	box-sizing: border-box;
 	width: 100%;
 	text-align: left;
@@ -26,7 +27,7 @@
 /* The company logo */
 
 .footer-distributed h3{
-	color:  #ffffff;
+	color:  #fff;
 	font: normal 36px 'Cookie', cursive;
 	margin: 0;
 }
@@ -38,7 +39,7 @@
 /* Footer links */
 
 .footer-distributed .footer-links{
-	color:  #ffffff;
+	color:  #fff;
 	margin: 20px 0 12px;
 	padding: 0;
 }

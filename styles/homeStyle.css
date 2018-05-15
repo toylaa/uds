@@ -1,0 +1,46 @@
+
+
+	body {
+	font-family: 'Roboto', sans-serif;
+	padding: 0;
+	margin: 0;
+	}
+
+	section {
+	min-height:500px;
+	border-radius:5px;
+	}
+
+	small {
+	font-size: 12px;
+	color: rgba(0, 0, 0, 0.4);
+	}
+
+	h1 {
+	text-align: center;
+	/*padding: 50px 0;*/
+	font-weight: 800;
+	margin: 0;
+	letter-spacing: -1px;
+	color: inherit;
+	font-size: 40px;
+	}
+
+	h2 {
+	text-align: center;
+	font-size: 30px;
+	margin: 0;
+	font-weight: 300;
+	color: inherit;
+	/*padding: 50px;*/
+	}
+
+	h3 {
+	text-align: center;
+	font-size: 20px;
+	margin: 0;
+	font-weight: 300;
+	color: inherit;
+	/*padding: 30px;*/
+	}
+
