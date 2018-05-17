@@ -68,7 +68,7 @@
 
 	<?php require_once 'php/footer.php'; ?>
 	<?php
-  		//echo 'This is Index Page';
+  		echo 'This is Index Page';
   		$sql = 'SELECT * FROM uds_first_try.posts';
   		$stmt = $pdo->prepare($sql);
   		$stmt->execute();
