@@ -67,6 +67,8 @@
 	</div>
 
 	<?php require_once 'php/footer.php'; ?>
+	
+	<div>
 	<?php
   		echo 'This is Index Page';
   		$sql = 'SELECT * FROM uds_first_try.posts';
@@ -76,6 +78,7 @@
   		$details = $stmt->fetch();
   		print_r ($details);
 	?>
+	</div>
 
 </div>
 
