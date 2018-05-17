@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php include ('db.php')?>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -25,13 +26,13 @@
 	 <?php require_once 'php/nav.php'; ?>
 
 	<div class="content">
-		
-		
+
+
 
 		<section style=";background:#f1c40f;">
 					<div style="text-align:center;padding:10%;">
 						<h2 id="noCake">Give this dirty bitch a good Scrolling..</h2>
-						<br>	
+						<br>
 						<p>
 							This page now has a STICKY SEARCH BAR, as SEPARATE from the NAVIGATION BAR
 						</p>
@@ -45,12 +46,12 @@
 						  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
 						<br/>
 					</div>
-				</section>  
+				</section>
 
 				<section style="background:#aa8a0a;">
 					<div style="text-align:center;padding:10%;">
 						<br/>
-						<h2 id="noCake">There is no cake.</h2>	
+						<h2 id="noCake">There is no cake.</h2>
 						<br/>
 						<h3>Here is another section. Monochromatic color:#aa8a0a</h3>
 						<h3>For the record i hate this color</h3>
@@ -60,12 +61,21 @@
 						  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
 						<br/>
 					</div>
-				</section>  
+				</section>
 
 
 	</div>
 
 	<?php require_once 'php/footer.php'; ?>
+	<?php
+  		//echo 'This is Index Page';
+  		$sql = 'SELECT * FROM uds_first_try.posts';
+  		$stmt = $pdo->prepare($sql);
+  		$stmt->execute();
+  		$rowCount = $stmt->rowCount();
+  		$details = $stmt->fetch();
+  		print_r ($details);
+	?>
 
 </div>
 
