@@ -9,7 +9,7 @@ $stmt->execute();
 $rowCount = $stmt->rowCount();
 $details = $stmt->fetch();
 //print_r ($details);
-print_r ($stmt->execute());
+print_r ($pdo->query($sql));
 //echo 'hello';
 
 
