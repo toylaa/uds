@@ -58,5 +58,5 @@ pg_free_result($result);
 
 echo '</table></body></html>';
 echo $_SESSION['searchText'];
-echo 'select * from uds_first_try.posts where name ilike \'poop\'';
+echo 'select * from uds_first_try.posts where name ilike \'.$searchText.\' or description ilike \'.$searchText.\'';
 ?>
