@@ -8,8 +8,10 @@ $stmt = $pdo->query($sql);
 $stmt->execute();
 $rowCount = $stmt->rowCount();
 $details = $stmt->fetch();
-print_r ($details);
+//print_r ($details);
+print_r ($stmt->execute());
+//echo 'hello';
 
-echo 'hello';
-echo $details[name];
+
+
 ?>
