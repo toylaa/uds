@@ -23,7 +23,7 @@
 <div class="offset-spaceholder" style="min-height:90px;">
   <div class="center header animated" id="searchHeader">
    
-   <form method="POST" action="search.php">
+   <form method="POST" action="/php/search.php">
    	<input type="text" name="searchText" placeholder="I'm a Sticky Search Bar!">
    	<button>Search</button>
    </form>
