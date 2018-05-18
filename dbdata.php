@@ -1,6 +1,9 @@
 
 <?php
 
+session_start();
+
+
 $host = "ec2-54-243-137-182.compute-1.amazonaws.com";
 $user = "qkfgniqxbkiaju";
 $password = "dd4d84b264bff6405448085e4fbc365d402d5cd8f3f3b804020682af42b8df3d";
