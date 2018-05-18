@@ -11,5 +11,5 @@ $details = $stmt->fetch();
 print_r ($details);
 
 echo 'hello';
-
+echo $details[name];
 ?>
