@@ -25,7 +25,7 @@
    
  
    <input type="text" name="searchText" placeholder="I'm a Sticky Search Bar!">
-   <button onclick="alert(<?php echo $_GET['searchText']; ?>)">click me</button>
+   <button onclick="alert('get this text')">click me</button>
 
    <span id="header-contents" style="color:#fff;display:none;">This shit was hidden until you scrolled ;p </span>
       
