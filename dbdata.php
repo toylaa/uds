@@ -3,11 +3,11 @@ include ('db.php');
 	
 
 //echo 'This is Index Page';
-$sql = 'SELECT name FROM uds_first_try.posts';
+$sql = 'SELECT * FROM uds_first_try.posts';
 $stmt = $pdo->query($sql);
 $stmt->execute();
 $rowCount = $stmt->rowCount();
-$details = $stmt->fetch();
+$details = $stmt->pg_fetch_all();
 print_r ($details);
 
 //echo 'hello';
