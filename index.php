@@ -83,7 +83,7 @@ echo '<table>
         <th>Name</th>
     </tr>';
 
-while ($row = mysqli_fetch_array($details)) {
+while ($row = $stmt->fetch()) {
     echo '
         <tr>
             <td>'.$row['id'].'</td>
