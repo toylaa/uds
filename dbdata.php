@@ -52,4 +52,6 @@ pg_free_result($result);
 
 echo '</table></body></html>';
 echo $searchText;
+
+echo 'hello';
 ?>
