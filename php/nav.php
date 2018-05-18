@@ -25,11 +25,9 @@
    
  
    <input type="text" name="searchText" placeholder="I'm a Sticky Search Bar!">
-   <button onclick="alert('get this text')">click me</button>
+   <button onclick='search.php'>Search</button>
 
    <span id="header-contents" style="color:#fff;display:none;">This shit was hidden until you scrolled ;p </span>
-      
-    
  
   </div>
 </div>
