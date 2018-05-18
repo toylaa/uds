@@ -1,7 +1,7 @@
-<?php include ('db.php')?>
+ include ('db.php')
 	
-	<?php
-  		//echo 'This is Index Page';
+
+  		echo 'This is Index Page';
   		$sql = 'SELECT id FROM uds_first_try.posts';
   		$stmt = $pdo->prepare($sql);
   		$stmt->execute();
@@ -26,4 +26,3 @@ while ($row = $stmt->fetch()) {
 echo '
 </table>';
 
-	?>
