@@ -1,8 +1,5 @@
 <?php include ('db.php')?>
-
-	<?php require_once 'php/footer.php'; ?>
 	
-	<div>
 	<?php
   		//echo 'This is Index Page';
   		$sql = 'SELECT id FROM uds_first_try.posts';
@@ -10,7 +7,7 @@
   		$stmt->execute();
   		$rowCount = $stmt->rowCount();
   		$details = $stmt->fetch();
-  		print_r ($details);
+  		print_r ($details[name]);
 echo '<table>
     <tr>
         <th>ID</th>
