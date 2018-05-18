@@ -51,7 +51,5 @@ while ($row = pg_fetch_row($result))
 pg_free_result($result);
 
 echo '</table></body></html>';
-echo $searchText;
-
-echo 'hello';
+echo $_SESSION['searchText'];
 ?>
