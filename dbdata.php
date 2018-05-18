@@ -21,7 +21,10 @@ if (!$link)
 }
 
 
-$query = 'select * from uds_first_try.posts';
+$searchText = $_SESSION['searchText'];
+
+
+$query = 'select * from uds_first_try.posts where name ilike '.$searchText.' or desc ilike '.$searchText;
 
 $result = pg_query($query);
 
@@ -54,5 +57,4 @@ while ($row = pg_fetch_row($result))
 pg_free_result($result);
 
 echo '</table></body></html>';
-echo $_SESSION['searchText'];
 ?>
