@@ -1,4 +1,5 @@
- include ('db.php')
+<?php 
+include ('db.php');
 	
 
   		echo 'This is Index Page';
@@ -26,3 +27,4 @@ while ($row = $stmt->fetch()) {
 echo '
 </table>';
 
+?>
