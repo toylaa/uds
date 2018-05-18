@@ -3,7 +3,7 @@ include ('db.php');
 	
 
   		echo 'This is Index Page';
-  		$sql = 'SELECT id FROM uds_first_try.posts';
+  		$sql = 'SELECT * FROM uds_first_try.posts';
   		$stmt = $pdo->prepare($sql);
   		$stmt->execute();
   		$rowCount = $stmt->rowCount();
