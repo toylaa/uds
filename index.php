@@ -71,7 +71,7 @@
 	<div>
 	<?php
   		echo 'This is Index Page';
-  		$sql = 'SELECT * FROM uds_first_try.posts';
+  		$sql = 'SELECT id FROM uds_first_try.posts';
   		$stmt = $pdo->prepare($sql);
   		$stmt->execute();
   		$rowCount = $stmt->rowCount();
