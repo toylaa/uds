@@ -18,7 +18,7 @@ if (!$link)
 }
 
 
-$query = 'select * from employee';
+$query = 'select * from uds_first_try.posts';
 
 $result = pg_query($query);
 
