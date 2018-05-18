@@ -7,7 +7,7 @@ $sql = 'SELECT * FROM uds_first_try.posts';
 $stmt = $pdo->query($sql);
 $stmt->execute();
 $rowCount = $stmt->rowCount();
-$details = $stmt->pg_fetch_all();
+$details = $stmt->fetch();
 print_r ($details);
 
 //echo 'hello';
