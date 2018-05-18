@@ -8,7 +8,7 @@ include ('db.php');
   		$stmt->execute();
   		$rowCount = $stmt->rowCount();
   		$details = $stmt->fetch();
-  		print_r ($details[name]);
+  		print_r ($details);
 echo '<table>
     <tr>
         <th>ID</th>
@@ -27,4 +27,5 @@ while ($row = $stmt->fetch()) {
 echo '
 </table>';
 
+echo 'hello';
 ?>
