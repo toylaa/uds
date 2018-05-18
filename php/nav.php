@@ -23,10 +23,10 @@
 <div class="offset-spaceholder" style="min-height:90px;">
   <div class="center header animated" id="searchHeader">
    
- 
-   <input type="text" name="searchText" placeholder="I'm a Sticky Search Bar!">
-   <button onclick='search.php'>Search</button>
-
+   <form method="POST" action="search.php">
+   	<input type="text" name="searchText" placeholder="I'm a Sticky Search Bar!">
+   	<button>Search</button>
+   </form>
    <span id="header-contents" style="color:#fff;display:none;">This shit was hidden until you scrolled ;p </span>
  
   </div>

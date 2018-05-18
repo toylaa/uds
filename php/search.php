@@ -1,4 +1,5 @@
 <?php
 	$searchText = $_POST['searchText'];
-	print ($searchText);
+	echo $searchText;
+	header("Location: /dbdata.php");
 ?>
