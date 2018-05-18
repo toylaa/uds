@@ -24,7 +24,7 @@ if (!$link)
 $searchText = $_SESSION['searchText'];
 
 
-$query = 'select * from uds_first_try.posts where name ilike \''.$searchText.'\' or description ilike \''.$searchText'\'';
+$query = 'select * from uds_first_try.posts where name ilike /'poop/' or description ilike /'poop/'';
 
 $result = pg_query($query);
 
