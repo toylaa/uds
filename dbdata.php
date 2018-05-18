@@ -24,7 +24,7 @@ if (!$link)
 $searchText = $_SESSION['searchText'];
 
 
-$query = 'select * from uds_first_try.posts where name ilike /'poop/' or description ilike /'poop/'';
+$query = 'select * from uds_first_try.posts';
 
 $result = pg_query($query);
 
@@ -58,4 +58,5 @@ pg_free_result($result);
 
 echo '</table></body></html>';
 echo $_SESSION['searchText'];
+echo 'select * from uds_first_try.posts where name ilike /'poop/'';
 ?>
