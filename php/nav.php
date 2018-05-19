@@ -24,16 +24,33 @@ session_start();
 
 
 <div class="offset-spaceholder" style="min-height:90px;">
-  <div class="center header animated" id="searchHeader">
-   
-   <form method="POST" action="/php/search.php">
-   	<input type="text" name="searchText" placeholder="I'm a Sticky Search Bar!">
-   	<button>Search</button>
-   </form>
-   <span id="header-contents" style="color:#fff;display:none;">This shit was hidden until you scrolled ;p </span>
- 
+  <div class="center header animated" id="searchHeader"> 
+
+    <form method="POST" action="/php/search.php">
+    	 <input type="text" name="searchText" placeholder="I'm a Sticky Search Bar!">
+   	 <button>Search</button>
+    </form>
+    <!--div class="input-group">
+      <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+      <div class="input-group-append">
+        <button type="button" class="btn btn-outline-secondary">Action</button>
+        <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+          <div role="separator" class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Separated link</a>
+        </div>
+      </div>
+    </div-->
+
+   <span id="hidden-header-contents" style="color:#fff;display:none;">This shit was hidden until you scrolled ;p </span>
   </div>
 </div>
+
 
 <script>
 window.onscroll = function() {stickyScroller()};
@@ -45,11 +62,11 @@ function stickyScroller() {
   if (window.pageYOffset >= sticky)
   {
     header.classList.add("sticky", "flipInX");    
-    document.getElementById("header-contents").style.display = "";
+    document.getElementById("hidden-header-contents").style.display = "";
 
   } else {
     header.classList.remove("sticky" , "flipInX");
-   document.getElementById("header-contents").style.display = "none";
+   document.getElementById("hidden-header-contents").style.display = "none";
   }
 }
 </script>
@@ -81,19 +98,11 @@ function stickyScroller() {
     position: fixed;
     top: 0;
     width: 100%;
-  }
-
-  .content {
-    margin:0;
-  }
+  } 
 
   .sticky + .content {
   padding-top: 0px;
-  }
-
-  .center {
-    text-align: center;
-  }
+  } 
 
   /* NAVIGATION */
   nav {
