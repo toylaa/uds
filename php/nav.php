@@ -1,9 +1,3 @@
-<?php
-session_start();
-?>
-
-
-
   <nav class=" top-container shift" >
 
      <div class="center">
@@ -22,57 +16,164 @@ session_start();
     </nav>
 
 
-
+<!-- "offset-spaceholder" is necessary to HOLD the spot on the page after the nav moves
+ to prevent the content from bunching up and hiding behind the nav as soon as it 
+ changes from static to sticky -->
 <div class="offset-spaceholder" style="min-height:90px;">
-  <div class="center header animated" id="searchHeader"> 
+  <div class="container-fluid center header animated" id="searchHeader"> 
+    
+    <!--form method="POST" action="/php/search.php"-->
 
-    <form method="POST" action="/php/search.php">
-    	 <input type="text" name="searchText" placeholder="I'm a Sticky Search Bar!">
-   	 <button>Search</button>
-    </form>
-    <!--div class="input-group">
-      <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
-      <div class="input-group-append">
-        <button type="button" class="btn btn-outline-secondary">Action</button>
-        <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="sr-only">Toggle Dropdown</span>
-        </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-          <div role="separator" class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Separated link</a>
+          <input class="input" type="text" id="searchText" placeholder="I'm Sticky !" style="text-align:center;" required>
+       
+          <button class="btn btn-default xbtn" type="submit" id="searchbar-submit" ><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search</button>
+
+          <span id="hidden-header-contents" style="color:#fff;display:none;">This shit appears on scroll ;p </span>
+       
+    <!--/form-->
+    
+ <!--div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+             <span id="hidden-header-contents" style="color:#fff;display:none;">This shit appears on scroll ;p </span>
         </div>
-      </div>
-    </div-->
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">        
+            <table><tr>
+              <td><input class="input" type="text" id="searchText" placeholder="I'm Sticky !" style="text-align:center;" required></td>
+              <td style="min-width:4px;"></td>
+              <td><button class="btn btn-default" type="submit" id="searchbar-submit" >
+                <span class="glyphicon glyphicon-search" aria-hidden="true"></span> 
+                Search
+              </button></td>
+            </tr></table>       
 
-   <span id="hidden-header-contents" style="color:#fff;display:none;">This shit was hidden until you scrolled ;p </span>
+             
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <button class="btn xbtn" ><span class="glyphicon glyphicon-remove" ></span></button>
+        </div>
+    </div>
+</div-->
+    
+   
+  
   </div>
 </div>
 
 
 <script>
-window.onscroll = function() {stickyScroller()};
 
-var header = document.getElementById("searchHeader");
-var sticky = header.offsetTop;
+    //--------- Submission Event Listeners ---------//
+    //Bind event listener to submit button to trigger the ajaxSubmit CALLBACK [function without () in call syntax] 
+    $("#searchbar-submit").on("click", ajaxSubmit);
+    // Bind event listener to the search field to trigger the same submit function as the button is attached to when the RETURN(ENTER)key is pressed
+    var input = document.getElementById("searchText");
+    // Execute a function when the user releases a key on the keyboard from inside the INPUT field
+    input.addEventListener("keyup", function(event) 
+    {   // Cancel the default action, if needed
+        event.preventDefault();
+        // Number 13 is the "Enter" key on the keyboard
+        if (event.keyCode === 13) 
+        {
+            // Trigger the button element with a click
+            // FAKE DOM CLICK EVENT !
+            document.getElementById("searchbar-submit").click();
+        }
+      });
+    //--------- Submission Event Listeners ---------//
 
-function stickyScroller() {
-  if (window.pageYOffset >= sticky)
-  {
-    header.classList.add("sticky", "flipInX");    
-    document.getElementById("hidden-header-contents").style.display = "";
 
-  } else {
-    header.classList.remove("sticky" , "flipInX");
-   document.getElementById("hidden-header-contents").style.display = "none";
-  }
-}
+
+
+    //-----------------------------------------------------//
+    // TBD  - Build this function out to make an ajax call to the database
+    // Q:}  - ajaxSubmit('params?') - how many different requests/parameters do we want/need ?
+    //  
+    // Test - Consult db/ajaxResponder.php which has only one job which is to echo the text from the request object
+    //-------------- AjaxSubmit Function ------------------//
+    function ajaxSubmit(){
+      
+      //If input.value is NOT null
+      if (input.value != '')
+      {
+         // TBD - remove success alert..? 
+         swal("TBD - ajaxSubmit!", "input.value: " + input.value , "success", {
+          button: "Aww yiss!",
+        });
+
+        //TBD - AJAX CALL to db/ajaxResponder.php or some such shit
+        //TBD - Do something cool with the response data (y)
+        //
+      }
+      else //If input.value is null - TBD - produce clever(er) alert using 'sweet alerts' plugin.
+      {        
+        // https://sweetalert.js.org/guides/
+        // - third argument, predefined alert icons(extensible): "warning", "error", "success" and "info".
+        swal({
+          title: "If one searches for nothing...",
+          text: "..can it ever truly be found?",
+          icon: "info",
+          button: "No. Try again.",
+          //buttons: true,
+          dangerMode: true,
+        });
+      }//--End else
+
+    }//-------End of AjaxSubmit Function ------------------//
+
+
+     $("#searchbar-hide").on("click",hideSearchBar);
+
+     function hideSearchBar(){
+        alert('hide search bar !');
+     }
+
+    //toggling the searchbar onScroll effects 
+    var header = document.getElementById("searchHeader");
+    window.onscroll = function() {stickyScroller()};
+    var sticky = header.offsetTop;
+    
+    function stickyScroller() {
+      if (window.pageYOffset >= sticky)
+      {
+        //Adding 'Sticky' class to the nav adds the sticking effect  
+        header.classList.add("sticky", "flipInX");    
+        //Toggles the display of the hidden troll line on scroll only 
+        document.getElementById("hidden-header-contents").style.display = "";
+
+      } else {
+        header.classList.remove("sticky" , "flipInX");
+       document.getElementById("hidden-header-contents").style.display = "none";
+      }
+    }    
 </script>
+<!--End of JavaScript--------------------------------------------------------------------------->
+
+
+
+
+
+
+<!--------------Beginning of CSS ---------------------------------------------------------------->
 
 <style type="text/css">
+
+  .xbtn {
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;
+       border: 2px solid white; 
+        background-color: #333;
+        color: white;
   
+  }
+
+  .xbtn:hover {
+     background-color: #FFF; 
+      color: black;
+  }
+
+  /*   This is the CSS styling for the Sticky effect   
+  Inline styling here means that only pages which include nav.php can use the sticky effect */
   .fixed {
     animation-duration: 0.8s;
     animation-name: fadeIn;
@@ -104,6 +205,8 @@ function stickyScroller() {
   padding-top: 0px;
   } 
 
+
+  /* This is the CSS styling for the 'shifting' yellow hover effect on the nav elements */
   /* NAVIGATION */
   nav {
     width: 80%;
@@ -169,9 +272,6 @@ function stickyScroller() {
     visibility: visible;
     height: 100%;
   }
-
-
-
 
 </style>
 
