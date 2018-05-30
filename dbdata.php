@@ -4,8 +4,6 @@
 session_start();
 
 require 'db/connect.php';
-require 'php/nav.php';
-
 
 $searchText = $_POST["text"];
 
@@ -26,7 +24,7 @@ while ($i < pg_num_fields($result))
 echo '</tr>';
 $i = 0;
 
-while ($row = pg_fetch_row($result)) 
+while ($row = pg_fetch_row($result))
 {
 	echo '<tr>';
 	$count = count($row);
