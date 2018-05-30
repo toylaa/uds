@@ -4,10 +4,10 @@
 session_start();
 
 require 'db/connect.php';
+require 'php/nav.php';
 
 
-$searchText = $_SESSION['searchText'];
-
+$searchText = $_POST["text"];
 
 $query = 'select * from uds_first_try.posts where name ilike \'%'.$searchText.'%\' or description ilike \'%'.$searchText.'%\'';
 

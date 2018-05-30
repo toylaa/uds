@@ -3,7 +3,7 @@
      <div class="center">
       <h2>Welcome to Unified Disposal Services. </h2>
 
-      <span><img  src="img/114x114.png" class="animated bounceIn"></span> 
+      <span><img  src="img/114x114.png" class="animated bounceIn"></span>
     </div>
       <!--Nav class options=(circle/stroke/fill/shift)-->
       <ul>
@@ -17,46 +17,46 @@
 
 
 <!-- "offset-spaceholder" is necessary to HOLD the spot on the page after the nav moves
- to prevent the content from bunching up and hiding behind the nav as soon as it 
+ to prevent the content from bunching up and hiding behind the nav as soon as it
  changes from static to sticky -->
 <div class="offset-spaceholder" style="min-height:90px;">
-  <div class="container-fluid center header animated" id="searchHeader"> 
-    
+  <div class="container-fluid center header animated" id="searchHeader">
+
     <!--form method="POST" action="/php/search.php"-->
 
           <input class="input" type="text" id="searchText" placeholder="I'm Sticky !" style="text-align:center;" required>
-       
+
           <button class="btn btn-default xbtn" type="submit" id="searchbar-submit" ><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search</button>
 
           <span id="hidden-header-contents" style="color:#fff;display:none;">This shit appears on scroll ;p </span>
-       
+
     <!--/form-->
-    
+
  <!--div class="container-fluid">
     <div class="row">
         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
              <span id="hidden-header-contents" style="color:#fff;display:none;">This shit appears on scroll ;p </span>
         </div>
-        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">        
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <table><tr>
               <td><input class="input" type="text" id="searchText" placeholder="I'm Sticky !" style="text-align:center;" required></td>
               <td style="min-width:4px;"></td>
               <td><button class="btn btn-default" type="submit" id="searchbar-submit" >
-                <span class="glyphicon glyphicon-search" aria-hidden="true"></span> 
+                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                 Search
               </button></td>
-            </tr></table>       
+            </tr></table>
 
-             
+
         </div>
         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <button class="btn xbtn" ><span class="glyphicon glyphicon-remove" ></span></button>
         </div>
     </div>
 </div-->
-    
-   
-  
+
+
+
   </div>
 </div>
 
@@ -64,16 +64,16 @@
 <script>
 
     //--------- Submission Event Listeners ---------//
-    //Bind event listener to submit button to trigger the ajaxSubmit CALLBACK [function without () in call syntax] 
+    //Bind event listener to submit button to trigger the ajaxSubmit CALLBACK [function without () in call syntax]
     $("#searchbar-submit").on("click", ajaxSubmit);
     // Bind event listener to the search field to trigger the same submit function as the button is attached to when the RETURN(ENTER)key is pressed
     var input = document.getElementById("searchText");
     // Execute a function when the user releases a key on the keyboard from inside the INPUT field
-    input.addEventListener("keyup", function(event) 
+    input.addEventListener("keyup", function(event)
     {   // Cancel the default action, if needed
         event.preventDefault();
         // Number 13 is the "Enter" key on the keyboard
-        if (event.keyCode === 13) 
+        if (event.keyCode === 13)
         {
             // Trigger the button element with a click
             // FAKE DOM CLICK EVENT !
@@ -88,25 +88,30 @@
     //-----------------------------------------------------//
     // TBD  - Build this function out to make an ajax call to the database
     // Q:}  - ajaxSubmit('params?') - how many different requests/parameters do we want/need ?
-    //  
+    //
     // Test - Consult db/ajaxResponder.php which has only one job which is to echo the text from the request object
     //-------------- AjaxSubmit Function ------------------//
     function ajaxSubmit(){
-      
+
       //If input.value is NOT null
       if (input.value != '')
       {
-         // TBD - remove success alert..? 
+         // TBD - remove success alert..?
+
+         /*
          swal("TBD - ajaxSubmit!", "input.value: " + input.value , "success", {
           button: "Aww yiss!",
         });
-
+        */
+        $.post('dbdata.php', { text: input.value }, function(result) {
+           alert(result);
+        });
         //TBD - AJAX CALL to db/ajaxResponder.php or some such shit
         //TBD - Do something cool with the response data (y)
         //
       }
       else //If input.value is null - TBD - produce clever(er) alert using 'sweet alerts' plugin.
-      {        
+      {
         // https://sweetalert.js.org/guides/
         // - third argument, predefined alert icons(extensible): "warning", "error", "success" and "info".
         swal({
@@ -128,24 +133,24 @@
         alert('hide search bar !');
      }
 
-    //toggling the searchbar onScroll effects 
+    //toggling the searchbar onScroll effects
     var header = document.getElementById("searchHeader");
     window.onscroll = function() {stickyScroller()};
     var sticky = header.offsetTop;
-    
+
     function stickyScroller() {
       if (window.pageYOffset >= sticky)
       {
-        //Adding 'Sticky' class to the nav adds the sticking effect  
-        header.classList.add("sticky", "flipInX");    
-        //Toggles the display of the hidden troll line on scroll only 
+        //Adding 'Sticky' class to the nav adds the sticking effect
+        header.classList.add("sticky", "flipInX");
+        //Toggles the display of the hidden troll line on scroll only
         document.getElementById("hidden-header-contents").style.display = "";
 
       } else {
         header.classList.remove("sticky" , "flipInX");
        document.getElementById("hidden-header-contents").style.display = "none";
       }
-    }    
+    }
 </script>
 <!--End of JavaScript--------------------------------------------------------------------------->
 
@@ -161,18 +166,18 @@
   .xbtn {
       -webkit-transition-duration: 0.4s; /* Safari */
       transition-duration: 0.4s;
-       border: 2px solid white; 
+       border: 2px solid white;
         background-color: #333;
         color: white;
-  
+
   }
 
   .xbtn:hover {
-     background-color: #FFF; 
+     background-color: #FFF;
       color: black;
   }
 
-  /*   This is the CSS styling for the Sticky effect   
+  /*   This is the CSS styling for the Sticky effect
   Inline styling here means that only pages which include nav.php can use the sticky effect */
   .fixed {
     animation-duration: 0.8s;
@@ -194,16 +199,16 @@
   border-radius: 4px;
   border-top-width:1px;
 }
-  
+
   .sticky {
     position: fixed;
     top: 0;
     width: 100%;
-  } 
+  }
 
   .sticky + .content {
   padding-top: 0px;
-  } 
+  }
 
 
   /* This is the CSS styling for the 'shifting' yellow hover effect on the nav elements */
@@ -274,5 +279,3 @@
   }
 
 </style>
-
-
