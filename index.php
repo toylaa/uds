@@ -24,56 +24,60 @@ session_start();
 
 
 <head>
-	<title>Unified Disposal Services - Home for all things trash related</title>
+	<title>PriceRight Disposal Services</title>
 </head>
 <body>
 
 <div class="page-container">
 
-	 <?php require_once 'php/nav.php'; ?>
+<!-- INCLUDE NAV    -->
+ <?php require_once 'php/nav.php'; ?>
 
-	<div class="content">
+	<div id="main-content" class="content">
 
+		<div id="home-sections">
 
+			<section style=";background:#f1c40f;">
+				<div style="text-align:center;padding:5%;">
+					<h1>Welcome to PriceRightDisposal.com!</h1>
+					<br>
+					<h2>Our mission is to make YOUR life easier.</h2>
+					<br>
+					<h3>Please excuse our appearance as we are under construction.</h3>	
+					<br>
+					<p>
+						This page now has a STICKY SEARCH BAR, as SEPARATE from the NAVIGATION BAR
+					</p>
+					
+					<h3>Here is a 'section'. Monochromatic color:#f1c40f</h3>
+					
+					<br>
 
-		<section style=";background:#f1c40f;">
-					<div style="text-align:center;padding:10%;">
-						<h2 id="noCake">Give this dirty bitch a good Scrolling..</h2>
-						<br>
-						<p>
-							This page now has a STICKY SEARCH BAR, as SEPARATE from the NAVIGATION BAR
-						</p>
-						<br/>
-						<h3>Here is a 'section'. Monochromatic color:#f1c40f</h3>
-						<br>
-						<h3>Please excuse our appearance (and our language) as we are under construction.</h3>
-						<br>
+					  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+					  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+					<br/>
+				</div>
+			</section>
+			<section style="background:#aa8a0a;">
+				<div style="text-align:center;padding:10%;">
+					<br/>
+					<h2 id="noCake">There is no cake.</h2>
+					<br/>
+					<h3>Here is another section. Monochromatic color:#aa8a0a</h3>
+					<h3>For the record i hate this color</h3>
+					<br>
+					<p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+					  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+					  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+					<br/>
+				</div>
+			</section>	
 
-						  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-						  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-						<br/>
-					</div>
-				</section>
+		</div> <!--end of <div id="home-sections">-->
+	</div><!-- End of  <div id="main-content"> -->
 
-				<section style="background:#aa8a0a;">
-					<div style="text-align:center;padding:10%;">
-						<br/>
-						<h2 id="noCake">There is no cake.</h2>
-						<br/>
-						<h3>Here is another section. Monochromatic color:#aa8a0a</h3>
-						<h3>For the record i hate this color</h3>
-						<br>
-						<p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-						  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-						  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-						<br/>
-					</div>
-				</section>
-
-
-	</div>
-
-	<?php require_once 'php/footer.php'; ?>
+<!-- INCLUDE FOOTER -->
+<?php require_once 'php/footer.php'; ?>		
 	
 
 </div>

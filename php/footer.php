@@ -20,7 +20,7 @@
   				</p>
   
   				<p class="footer-company-name" style= "display:block; margin:auto;" >
-  				  Unified Disposal Services&copy; 2018</p>
+  				  PriceRight Disposal Services&copy; 2018</p>
   			</div>
   
   			<div class="footer-center">
@@ -46,8 +46,8 @@
   			<div class="footer-right">
   
   				<p class="footer-company-about">
-  					<span>"Unified Disposal Services is dedicated to heping you find the best service and equipment rental deals available in your area."</span>
-  					-Our Motto 
+  					<span style="padding-top:35px;">PriceRight Services&trade; is dedicated to helping you find the best deals on services and equipment available in your area.</span>
+  					-Our Team Motto 
   				</p>
   
   				<!--div class="footer-icons">
