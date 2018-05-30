@@ -104,6 +104,11 @@
         });
         */
         $.post('dbdata.php', { text: input.value }, function(result) {
+          /*
+            result: the results of the query with given input in the form of HTML table
+            instead of alert we have to take result and implement it into the DOM
+              
+          */
            alert(result);
         });
         //TBD - AJAX CALL to db/ajaxResponder.php or some such shit
