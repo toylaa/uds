@@ -1,18 +1,21 @@
   <nav class=" top-container shift" >
 
      <div class="center">
-      <h2>Welcome to Unified Disposal Services. </h2>
-
+      <h2>Price Right Disposal Services. </h2>
+      <br>
       <span><img  src="img/114x114.png" class="animated bounceIn"></span>
     </div>
       <!--Nav class options=(circle/stroke/fill/shift)-->
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="/dbdata.php">Services</a></li>
-        <li><a href="#">Login</a></li>
-        <div style="clear"></div>
-      </ul>
+      <span id="nav-ul" style="min-height:50px;">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="/dbdata.php">Services</a></li>
+          <li><a href="#">Login</a></li>
+          <div style="clear"></div>
+        </ul>
+      </span>
+
     </nav>
 
 
@@ -28,7 +31,7 @@
 
           <button class="btn btn-default xbtn" type="submit" id="searchbar-submit" ><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search</button>
 
-          <span id="hidden-header-contents" style="color:#fff;display:none;">This shit appears on scroll ;p </span>
+          <span id="hidden-header-contents" style="color:#fff;display:none;">This only appears on scroll ! </span>
 
     <!--/form-->
 
@@ -107,7 +110,7 @@
           /*
             result: the results of the query with given input in the form of HTML table
             instead of alert we have to take result and implement it into the DOM
-              
+
           */
            alert(result);
         });
@@ -131,15 +134,20 @@
 
     }//-------End of AjaxSubmit Function ------------------//
 
-
+    //TBD? - add x button option to nav(to remove searchbar from top of page?)
+    /*
      $("#searchbar-hide").on("click",hideSearchBar);
 
      function hideSearchBar(){
         alert('hide search bar !');
      }
+    */
 
     //toggling the searchbar onScroll effects
     var header = document.getElementById("searchHeader");
+    var hiddenSearchbarContent = document.getElementById("hidden-header-contents");
+    var header_nav_ul = document.getElementById("nav-ul");
+    //
     window.onscroll = function() {stickyScroller()};
     var sticky = header.offsetTop;
 
@@ -149,11 +157,14 @@
         //Adding 'Sticky' class to the nav adds the sticking effect
         header.classList.add("sticky", "flipInX");
         //Toggles the display of the hidden troll line on scroll only
-        document.getElementById("hidden-header-contents").style.display = "";
+        hiddenSearchbarContent.style.display = "";
+        //Hide the underlying NAV elements when the searchbar is scrolling to prevent bleed through
+        header_nav_ul.style.display = "none";
 
       } else {
         header.classList.remove("sticky" , "flipInX");
-       document.getElementById("hidden-header-contents").style.display = "none";
+       hiddenSearchbarContent.style.display = "none";
+       header_nav_ul.style.display = "";
       }
     }
 </script>
@@ -168,7 +179,21 @@
 
 <style type="text/css">
 
+
+
+  input[type=text] {
+    height:40px;
+    width: 250px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
   .xbtn {
+     height:40px;
       -webkit-transition-duration: 0.4s; /* Safari */
       transition-duration: 0.4s;
        border: 2px solid white;
