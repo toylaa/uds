@@ -112,7 +112,9 @@
             instead of alert we have to take result and implement it into the DOM
 
           */
-           alert(result);
+           //alert(result);
+	   y = document.getElementById("searchPane");
+           y.innerHTML = result;
         });
         //TBD - AJAX CALL to db/ajaxResponder.php or some such shit
         //TBD - Do something cool with the response data (y)
