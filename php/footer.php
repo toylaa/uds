@@ -46,8 +46,8 @@
   			<div class="footer-right">
   
   				<p class="footer-company-about">
-  					<span style="padding-top:35px;">PriceRight Services&trade; is dedicated to helping you find the best deals on services and equipment available in your area.</span>
-  					-Our Team Motto 
+  					<span style="padding-top:35px;">PriceRight Services is dedicated to quickly connecting you with providers of the best services and equipment available in your area.</span>
+  					-PriceRight&trade; Motto 
   				</p>
   
   				<!--div class="footer-icons">

@@ -10,7 +10,7 @@
         <ul>
           <li><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
-          <li><a href="/dbdata.php">Services</a></li>
+          <li><a href="db/dbdata.php?text=?">Services</a></li>
           <li><a href="#">Login</a></li>
           <div style="clear"></div>
         </ul>
@@ -31,7 +31,7 @@
 
           <button class="btn btn-default xbtn" type="submit" id="searchbar-submit" ><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search</button>
 
-          <span id="hidden-header-contents" style="color:#fff;display:none;">This only appears on scroll ! </span>
+          <!--span id="hidden-header-contents" style="color:#fff;display:none;">This only appears on scroll ! </span-->
 
     <!--/form-->
 
@@ -99,25 +99,37 @@
       //If input.value is NOT null
       if (input.value != '')
       {
-         // TBD - remove success alert..?
-
-         /*
-         swal("TBD - ajaxSubmit!", "input.value: " + input.value , "success", {
-          button: "Aww yiss!",
-        });
-        */
-        $.post('dbdata.php', { text: input.value }, function(result) {
           /*
-            result: the results of the query with given input in the form of HTML table
-            instead of alert we have to take result and implement it into the DOM
-
+           swal("TBD - ajaxSubmit!", "input.value: " + input.value , "success", {
+            button: "Aww yiss!",
+          });
           */
-           //alert(result);
-	   y = document.getElementById("searchPane");
-           y.innerHTML = result;
-        });
-        //TBD - AJAX CALL to db/ajaxResponder.php or some such shit
-        //TBD - Do something cool with the response data (y)
+
+           // AJAX CALL to db/dbdata.php
+          $.post('db/dbdata.php', { text: input.value }, function(result) 
+          {
+            /*
+              result: the results of the query with given input in the form of HTML table
+              instead of alert we have to take result and implement it into the DOM
+            */
+            
+             // Return with the response data (y)
+              alert("result: ("+ result + ")" );
+             
+             // TBD - ERROR styling.
+                if (result.includes("error_no_results_found"))
+                {
+                   swal("Sorry! No search results for:", '"'+input.value+'"' , "info", {
+                      button: "Awh ok...",
+                    });
+
+                } else {
+
+                     $searchPane = document.getElementById("searchPane");
+                   $searchPane.innerHTML = result;
+                }
+          });      
+          
         //
       }
       else //If input.value is null - TBD - produce clever(er) alert using 'sweet alerts' plugin.
@@ -150,9 +162,14 @@
     var hiddenSearchbarContent = document.getElementById("hidden-header-contents");
     var header_nav_ul = document.getElementById("nav-ul");
     //
-    window.onscroll = function() {stickyScroller()};
+    $stickyEnabled = true;
+    //
+    window.onscroll = function() {
+      if($stickyEnabled == true){stickyScroller();}
+    };
+//
     var sticky = header.offsetTop;
-
+//
     function stickyScroller() {
       if (window.pageYOffset >= sticky)
       {
@@ -165,8 +182,8 @@
 
       } else {
         header.classList.remove("sticky" , "flipInX");
-       hiddenSearchbarContent.style.display = "none";
-       header_nav_ul.style.display = "";
+        hiddenSearchbarContent.style.display = "none";
+        header_nav_ul.style.display = "";
       }
     }
 </script>

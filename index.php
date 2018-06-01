@@ -52,11 +52,19 @@ table#t01 {
 
 		<section style=";background:#f1c40f;">
 					<div id="searchPane" style="text-align:center;padding:10%;">
-						<h2 id="noCake">Give this dirty bitch a good Scrolling..</h2>
+						<h1>Welcome to PriceRightDisposal.com!</h1>
 						<br>
-						<p>
-							This page now has a STICKY SEARCH BAR, as SEPARATE from the NAVIGATION BAR
-						</p>
+						<h2>Our mission is to make YOUR life easier.</h2>
+						<br>
+						<h3>Please excuse our appearance as we are under construction.</h3>	
+						<br>
+						<ul style="text-align:left;padding:0 30%;">
+							<li>This page now has a STICKY SEARCH BAR, as SEPARATE from the NAVIGATION BAR</li>
+							<li>Search bar will send a simple query to our database</li>
+							<li>Search results will be thrown up on the screen</li>
+
+						</ul>
+						
 						<br/>
 						<h3>Here is a 'section'. Monochromatic color:#f1c40f</h3>
 						<br>
@@ -72,10 +80,10 @@ table#t01 {
 				<section style="background:#aa8a0a;">
 					<div style="text-align:center;padding:10%;">
 						<br/>
-						<h2 id="noCake">There is no cake.</h2>
+						<h2>For the record i hate this color</h2>
 						<br/>
 						<h3>Here is another section. Monochromatic color:#aa8a0a</h3>
-						<h3>For the record i hate this color</h3>
+						
 						<br>
 						<p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
 						  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
