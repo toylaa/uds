@@ -114,18 +114,15 @@
             */
             
              // Return with the response data (y)
-              alert("result: ("+ result + ")" );
-             
+              //alert("result: ("+ result + ")" );
+
+             $searchPane = document.getElementById("searchPane");
+
              // TBD - ERROR styling.
                 if (result.includes("error_no_results_found"))
                 {
-                   swal("Sorry! No search results for:", '"'+input.value+'"' , "info", {
-                      button: "Awh ok...",
-                    });
-
-                } else {
-
-                     $searchPane = document.getElementById("searchPane");
+		   $searchPane.innerHTML = <div>Sorry no results for given input</div>;
+                } else {                     
                    $searchPane.innerHTML = result;
                 }
           });      
