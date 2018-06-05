@@ -106,27 +106,30 @@
           */
 
            // AJAX CALL to db/dbdata.php
-          $.post('db/dbdata.php', { text: input.value }, function(result) 
+          $.post('db/dbdata.php', { text: input.value }, function(result)
           {
             /*
               result: the results of the query with given input in the form of HTML table
               instead of alert we have to take result and implement it into the DOM
             */
-            
+
              // Return with the response data (y)
               alert("result: ("+ result + ")" );
 
-             $searchPane = document.getElementById("searchPane");
+
 
              // TBD - ERROR styling.
                 if (result.includes("error_no_results_found"))
                 {
-		   $searchPane.innerHTML = <div>Sorry no results for given input</div>;
-                } else {                     
+                  swal("TBD - ajaxSubmit!", "input.value: " + input.value , "success", {
+                     button: "Aww yiss!",
+                   });
+                } else {
+                   $searchPane = document.getElementById("searchPane");
                    $searchPane.innerHTML = result;
                 }
-          });      
-          
+          });
+
         //
       }
       else //If input.value is null - TBD - produce clever(er) alert using 'sweet alerts' plugin.
