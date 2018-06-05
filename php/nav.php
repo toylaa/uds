@@ -114,7 +114,7 @@
             */
 
              // Return with the response data (y)
-              alert("result: ("+ result + ")" );
+              //alert("result: ("+ result + ")" );
 
 
 
