@@ -16,7 +16,9 @@ if (isset($_REQUEST['text']))
 		$query = 'select * from uds_first_try.posts';
 	} else 
 	{
-		$query = 'select * from uds_first_try.posts where name ilike \'%'.$searchText.'%\' or description ilike \'%'.$searchText.'%\'';
+		$query = 'select uds_first_try.users.name, uds_first_try.users.location, uds_first_try.users.phone, 
+uds_first_try.posts.description, uds_first_try.posts.type from uds_first_try.posts inner join 
+uds_first_try.users on uds_first_try.users.id = uds_first_try.posts.user_id where uds_first_try.users.name ilike \'%'.$searchText.'%\' or uds_first_try.posts.description ilike \'%'.$searchText.'%\'';
 	}
 // Get results of QUERY string
 	$result = pg_query($query);
