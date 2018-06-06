@@ -8,8 +8,8 @@
       <!--Nav class options=(circle/stroke/fill/shift)-->
       <span id="nav-ul" style="min-height:50px;">
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
+          <li><a href="index.php">Home</a></li>
+          <li><a href="#" onclick='document.getElementById("info_section").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});'>About</a></li>
           <li><a href="db/dbdata.php?text=?">Services</a></li>
           <li><a href="#">Login</a></li>
           <div style="clear"></div>
@@ -22,12 +22,12 @@
 <!-- "offset-spaceholder" is necessary to HOLD the spot on the page after the nav moves
  to prevent the content from bunching up and hiding behind the nav as soon as it
  changes from static to sticky -->
-<div class="offset-spaceholder" style="min-height:90px;">
-  <div class="container-fluid center header animated" id="searchHeader">
+<div class="offset-spaceholder" style="min-height:66px;">
+  <div class="container-fluid center header animated" id="searchHeader" style='padding-top: 5px;padding-bottom: 5px;' >
 
     <!--form method="POST" action="/php/search.php"-->
 
-          <input class="input" type="text" id="searchText" placeholder="I'm Sticky !" style="text-align:center;" required>
+          <input class="input" type="text" id="searchText" placeholder="Search all Services" style="text-align:center;" required>
 
           <button class="btn btn-default xbtn" type="submit" id="searchbar-submit" ><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search</button>
 
@@ -115,18 +115,34 @@
 
              // Return with the response data (y)
               //alert("result: ("+ result + ")" );
-
-
+               $searchPane = document.getElementById("searchPane");
 
              // TBD - ERROR styling.
                 if (result.includes("error_no_results_found"))
                 {
+                  //$searchPane.innerHTML = '<div>Sorry no results for given input</div>';
+
+                   swal({
+                      title: "Sorry, no search results were found for:",
+                      text: input.value,
+                      icon: "info",
+                      button: "Okay",
+                      //buttons: true,
+                      dangerMode: true,
+                    });
+                  /*
                   swal("TBD - ajaxSubmit!", "input.value: " + input.value , "success", {
                      button: "Aww yiss!",
                    });
+                   */                
+
                 } else {
-                   $searchPane = document.getElementById("searchPane");
+                  document.getElementById("main_section").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+                  document.getElementById("searchHeader").style.display = "none";
+                    //Populate $searchPane with results
                    $searchPane.innerHTML = result;
+                   //$searchPane.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+                    
                 }
           });
 
@@ -175,17 +191,28 @@
       {
         //Adding 'Sticky' class to the nav adds the sticking effect
         header.classList.add("sticky", "flipInX");
+
         //Toggles the display of the hidden troll line on scroll only
-        hiddenSearchbarContent.style.display = "";
+        //hiddenSearchbarContent.style.display = "";
+
         //Hide the underlying NAV elements when the searchbar is scrolling to prevent bleed through
         header_nav_ul.style.display = "none";
 
       } else {
+        header.style.display = "";
         header.classList.remove("sticky" , "flipInX");
-        hiddenSearchbarContent.style.display = "none";
+        //hiddenSearchbarContent.style.display = "none";
         header_nav_ul.style.display = "";
       }
     }
+
+
+    function hideSearchNav()
+    {
+      header.style.display = "";
+      //alert('hideSearchNav!');
+    }
+
 </script>
 <!--End of JavaScript--------------------------------------------------------------------------->
 
@@ -218,7 +245,6 @@
        border: 2px solid white;
         background-color: #333;
         color: white;
-
   }
 
   .xbtn:hover {

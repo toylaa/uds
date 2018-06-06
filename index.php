@@ -48,10 +48,8 @@ table#t01 {
 
 	<div class="content">
 
-
-
-		<section style=";background:#f1c40f;">
-					<div id="searchPane" style="text-align:center;padding:10%;">
+		<section id="main_section"	style=";background:#f1c40f;padding-top:70px;">
+					<div id="searchPane" style="text-align:center;padding:5%;">
 						<h1>Welcome to PriceRightDisposal.com!</h1>
 						<br>
 						<h2>Our mission is to make YOUR life easier.</h2>
@@ -75,10 +73,13 @@ table#t01 {
 						  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
 						<br/>
 					</div>
+					<span id="infoPane" ></span>
 				</section>
 
-				<section style="background:#aa8a0a;">
-					<div style="text-align:center;padding:10%;">
+				
+
+				<section id="info_section" style="background:#aa8a0a;">
+					<div  style="text-align:center;padding:5%;">
 						<br/>
 						<h2>For the record i hate this color</h2>
 						<br/>
