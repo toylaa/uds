@@ -11,7 +11,7 @@
           <li><a href="index.php">Home</a></li>
           <li><a href="#" onclick='document.getElementById("info_section").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});'>About</a></li>
           <li><a href="db/dbdata.php?text=?">Services</a></li>
-          <li><a href="#">Login</a></li>
+          <li><a href="login.php">Login</a></li>
           <div style="clear"></div>
         </ul>
       </span>
