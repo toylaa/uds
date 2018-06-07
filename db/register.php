@@ -12,8 +12,7 @@ require 'connect.php';
 
 
   $query = 'insert into uds_first_try.users (name, location, email, phone, website)
-            VALUES (\''.$_REQUEST["name"].'\',\''.$_REQUEST["loc"].'\',\''.$_REQUEST["email"].'\',\''.$_REQUEST["phone"].'\',
-            '.$_REQUEST["website"].'\')';
+            VALUES (\'t\',\'t\',\'t\',\'t\',\'t\')';
 
 
   pg_query($query);
