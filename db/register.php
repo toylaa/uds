@@ -1,10 +1,12 @@
 <?php
+
+session_start();
+
 require 'connect.php';
 
 // Changed POST to use REQUEST (same thing except bi-directional)
 if (isset($_REQUEST['name']) && isset($_REQUEST['loc']) && isset($_REQUEST['phone']) && isset($_REQUEST['email']))
 {
-	$searchText = $_REQUEST["text"];
 
 	//for testing (click 'services' tab --> return all items in db)
 
@@ -16,4 +18,5 @@ if (isset($_REQUEST['name']) && isset($_REQUEST['loc']) && isset($_REQUEST['phon
 
 
   pg_query($query);
+}
 ?>

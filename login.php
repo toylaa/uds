@@ -16,6 +16,7 @@
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  
   <script type="text/javascript">
 
 
@@ -27,7 +28,7 @@
       var email = document.getElementById("email");
       var phone = document.getElementById("phone");
       var web = document.getElementById("website");
-      
+
       $.post('db/register.php', { name: name.value, loc: loc.value, email: email.value, phone: phone.value, web: web.value }, function(result)
       {
             /*
