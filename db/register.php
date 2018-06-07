@@ -15,9 +15,9 @@ require 'connect.php';
   $email = $_REQUEST["email"];
   $phone = $_REQUEST["phone"];
   $website = $_REQUEST["website"];
-  
+
   $query = 'insert into uds_first_try.users (name, location, email, phone, website)
-            VALUES (\''.$name.''\',\''.$loc.''\',\''.$email.''\',\''.$phone.''\',\''.$website.''\')';
+            VALUES (\''.$name.'\',\''.$loc.'\',\''.$email.'\',\''.$phone.'\',\''.$website.'\')';
 
 
   pg_query($query);
