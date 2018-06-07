@@ -10,7 +10,7 @@
       <input class="input" type="text" placeholder="Location" style="text-align:center;" required id="location">
       <input class="input" type="text" placeholder="Email" style="text-align:center;" required id="email">
       <input class="input" type="text" placeholder="Phone" style="text-align:center;" required id="phone">
-      <input class="input" type="text" placeholder="Website" style="text-align:center;" required id="website">
+      <input class="input" type="text" placeholder="Website" style="text-align:center;" id="website">
       <button class="btn btn-default xbtn" type="submit" id="registration-submit">Sign Up!</button>
     </div>
   </body>

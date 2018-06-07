@@ -14,7 +14,7 @@ require 'connect.php';
   $loc = $_REQUEST["loc"];
   $email = $_REQUEST["email"];
   $phone = $_REQUEST["phone"];
-  $website = $_REQUEST["website"];
+  $website = $_REQUEST["web"];
 
   $query = 'insert into uds_first_try.users (name, location, email, phone, website)
             VALUES (\''.$name.'\',\''.$loc.'\',\''.$email.'\',\''.$phone.'\',\''.$website.'\')';
