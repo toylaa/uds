@@ -36,6 +36,7 @@
               callback when it is complete
 
             */
+            alert('you have sucessfully registered');
 
       });
     }
