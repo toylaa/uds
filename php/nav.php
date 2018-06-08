@@ -137,7 +137,7 @@
                    */                
 
                 } else {
-                  document.getElementById("main_section").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+                  document.getElementById("searchHeader").scrollIntoView({behavior: "smooth", inline: "nearest"});
                   document.getElementById("searchHeader").style.display = "none";
                     //Populate $searchPane with results
                    $searchPane.innerHTML = result;
