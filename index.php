@@ -38,7 +38,7 @@ table#t01 {
     background-color: #f1f1c1;
 }
 </style>
-	<title>Price Right Disposal - Home for all things trash related</title>
+	<title>Price Right Disposal Services</title>
 </head>
 <body>
 

@@ -164,14 +164,7 @@
 
     }//-------End of AjaxSubmit Function ------------------//
 
-    //TBD? - add x button option to nav(to remove searchbar from top of page?)
-    /*
-     $("#searchbar-hide").on("click",hideSearchBar);
-
-     function hideSearchBar(){
-        alert('hide search bar !');
-     }
-    */
+   
 
     //toggling the searchbar onScroll effects
     var header = document.getElementById("searchHeader");
