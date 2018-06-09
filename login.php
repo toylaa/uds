@@ -68,17 +68,17 @@
                           <!--li><span class="fa fa-check text-success"></span> < Marketing material here> </li>
                           <li><span class="fa fa-check text-success"></span> Save your favorites</li>
                           <li><span class="fa fa-check text-success"></span> Fast checkout</li-->
-                         
+
                           <li><a href="/read-more/"><u>Read more</u></a></li>
                       </ul>
                       <p><a id="register-flip" class="btn btn-info btn-block" style="float:bottom;">Yes please, register now!</a></p>
                   </div>
               </div>  <!-- End of login_row -->
 
-         
+
           </div>
       </div>
-    </div> <!-- end of 'login-overlay' --> 
+    </div> <!-- end of 'login-overlay' -->
 
 
     <!--------------- Registration Form  -------------------->
@@ -107,13 +107,13 @@
                             <label for="psw" class="control-label">Password</label>
                             <input type="text" class="form-control" id="psw" name="psw" required title="Please enter your password">
                             <span class="help-block"></span>
-                        </div>  
+                        </div>
 
                         <div class="form-group">
                             <label for="psw2" class="control-label">Confirm Password</label>
                             <input type="text" class="form-control" id="psw2" name="psw2" required title="Please confirm your password is correct">
                             <span class="help-block"></span>
-                        </div>                       
+                        </div>
 
                         <div class="form-group">
                             <label for="name" class="control-label">Company Name</label>
@@ -139,31 +139,29 @@
                             <span class="help-block"></span>
                         </div>
 
-                        
+
                         <div class="col-xs-3 " ></div>
 
                         <div id="login_row" class="row">
                           <div class="col-xs-6 " >
-                            <button type="submit" class="text-center btn btn-success btn-block">Login</button>
-
-                            <a href="/forgot/" class="text-center btn btn-default btn-block">Help me!</a>
+                            <button type="submit" class="text-center btn btn-success btn-block" id="registration-submit">Register</button>
                           </div>
                         </div>
 
                         <div class="col-xs-3 " /></div>
 
                     </form>
-                </div>               
+                </div>
 
               </div>
 
 
             </div>
           </div>
-      
+
 
       </div>
-    </div> <!-- end of 'registration-overlay' --> 
+    </div> <!-- end of 'registration-overlay' -->
 
 
   </body>
@@ -176,7 +174,7 @@
     $("#register-flip").on("click", pageFlip);
 
 
-    function pageFlip() 
+    function pageFlip()
     {
        //Toggle display class
        if( document.getElementById("login-overlay").style.display != 'none')
@@ -186,56 +184,70 @@
        }else{
            document.getElementById("login-overlay").style.display = '';
            document.getElementById("registration-overlay").style.display = 'none';
-       }   
+       }
     }
 
 
 
 
 
-    //$("#registration-submit").on("click", register);
 
     function register(){
 
       var allowRegistration = true ;
       var regErr = '';
 
-     
+
       var email = document.getElementById("email");
       var psw = document.getElementById("psw");   // TBD - PUSH PASSWORD DOWN INTO THE DATABASE
       var psw2 = document.getElementById("psw2");
       var name = document.getElementById("name");
       var phone = document.getElementById("phone");
-      var loc = document.getElementById("location");      
+      var loc = document.getElementById("location");
       var phone = document.getElementById("phone");
-      var web = document.getElementById("website");   
+      var web = document.getElementById("website");
 
       //alert(document.getElementById('psw2').value );
 
 
 
-      if ( psw.value.length < 8 )    {allowRegistration = false ; regErr += "Password must be at least 8 characters long\n"; }
-      if ( psw.value != psw2.value ) {allowRegistration = false ; regErr += "Passwords do not match\n"; }   
-
-
+      if ( psw.value.length < 8 )    {
+        allowRegistration = false ; regErr += "Password must be at least 8 characters long\n";
+      }
+      if ( psw.value != psw2.value ) {
+        allowRegistration = false ; regErr += "Passwords do not match\n";
+      }
 
 
         //TBD - remove following line in order to allow submission & remove errors
-                                      allowRegistration = false ; regErr += "Registration submission disallowed\n";
+      //allowRegistration = false ; regErr += "Registration submission disallowed\n";
 
 
       if (allowRegistration == true)
-      {        
+      {
 
-        $.post('db/register.php', { name: name.value, loc: loc.value, email: email.value, phone: phone.value, web: web.value }, function(result)
+        $.post('db/register.php', { name: name.value, loc: loc.value, email: email.value, phone: phone.value, web: web.value, psw: psw.value }, function(result)
         {
               /*
                 put in processing component showing registation is happening
                 callback when it is complete
 
               */
-              alert('You have sucessfully registered');
-            
+              swal(result, {
+                  button: "Continue",
+              });
+
+              if(result.includes("Successfully Registered!")){
+                document.getElementById("name").value = "";
+                document.getElementById("location").value = "";
+                document.getElementById("email").value = "";
+                document.getElementById("phone").value = "";
+                document.getElementById("website").value = "";
+                document.getElementById("psw").value = "";
+                document.getElementById("psw2").value = "";
+
+                pageFlip();
+              }
 
         });
 
@@ -247,9 +259,9 @@
           });
         //alert('Fucckouttahere \n Submission disALLOWED \n more validation needed');
       }
-      
+
     } // end of register(){}
-    
+
   </script>
 
 

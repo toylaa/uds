@@ -15,11 +15,21 @@ require 'connect.php';
   $email = $_REQUEST["email"];
   $phone = $_REQUEST["phone"];
   $website = $_REQUEST["web"];
+  $password = $_REQUEST["psw"];
 
-  $query = 'insert into uds_first_try.users (name, location, email, phone, website)
-            VALUES (\''.$name.'\',\''.$loc.'\',\''.$email.'\',\''.$phone.'\',\''.$website.'\')';
+  $query = 'select * from uds_first_try.users where email = \''.$email.'\'';
 
 
-  pg_query($query);
+  $result = pg_query($query);
 
+  if(pg_num_rows($result) >= 1){
+     echo 'User with that email already exists';
+  }
+  else {
+    $query = 'insert into uds_first_try.users (name, location, email, phone, website, password)
+              VALUES (\''.$name.'\',\''.$loc.'\',\''.$email.'\',\''.$phone.'\',\''.$website.'\',\''.$password.'\')';
+
+    pg_query($query);
+    echo 'Successfully Registered!';
+  }
 ?>
